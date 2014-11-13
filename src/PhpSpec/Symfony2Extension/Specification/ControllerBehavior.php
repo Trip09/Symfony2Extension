@@ -44,6 +44,7 @@ class ControllerBehavior extends ObjectBehavior
 
         $templating->renderResponse(Argument::cetera())->willReturn($response);
 
+        $this->container->has('security.context')->willReturn(true);
         $this->container->get('security.context')->willReturn($securityContext);
         $this->container->has('doctrine')->willReturn(true);
         $this->container->get('doctrine')->willReturn($doctrine);
